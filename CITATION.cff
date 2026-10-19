@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this case study, please cite it as below."
+title: "Measuring Useful Work on a CPU-Only Local AI Cluster"
+authors:
+  - family-names: Castillo
+    given-names: Manuel
+version: 1.0.0
+date-released: 2026-10-18
+license: CC-BY-4.0
+repository-code: "https://github.com/mannie-castillo/local-ai-cluster-casestudy"

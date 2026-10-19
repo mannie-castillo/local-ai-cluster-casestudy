@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="t d">
+  <title id="t">Cluster architecture: one control machine above a private LAN with no internet uplink, on which six HP minis and one Dell are peers; roles per node</title>
+  <desc id="d">The control machine (HP Envy) orchestrates over a private 1 Gbps LAN whose WAN port is unplugged. On that LAN, as peers, sit G3-1 (reserved, gated, large-model tests), G3-2, G3-4, G3-5 and G3-6 (inference workers running Ollama), G3-3 (retrieval host running Open WebUI and local embeddings) and the Dell OptiPlex (cold model archive in progress, no inference). Retrieval queries in condition C3 go from G3-3 to the workers. Solid elements are implemented; dashed elements are planned or gated.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; fill: #F4F8FF; }
+    .t { font-size: 18px; font-weight: 700; }
+    .sub { font-size: 13px; fill: #C8DAED; }
+    .n { font-size: 14px; font-weight: 700; }
+    .s { font-size: 12.5px; fill: #C8DAED; }
+    .s1 { font-size: 12.5px; fill: #F4F8FF; }
+    .v { font-size: 14px; font-weight: 700; }
+    .big { font-size: 24px; font-weight: 700; }
+    .k { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #16B8D8; }
+    .ko { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #F28A45; }
+    .ax { font-size: 12px; fill: #C8DAED; }
+    .grid { stroke: #295176; stroke-width: 1; }
+    .base { stroke: #C8DAED; stroke-width: 1; }
+    .panel { fill: #102C49; stroke: #295176; stroke-width: 1.5; }
+    .panel.cy { stroke: #16B8D8; }
+    .panel.or { stroke: #F28A45; stroke-dasharray: 6 4; }
+    .panel.ar { stroke: #C8DAED; fill: #0C2038; }
+    .panel.dash { stroke: #16B8D8; stroke-dasharray: 6 4; }
+    .bus { stroke: #16B8D8; stroke-width: 2.5; }
+    .link { stroke: #16B8D8; stroke-width: 1.5; }
+    .link.d { stroke-dasharray: 6 4; }
+    .link.q { stroke: #2678DC; stroke-dasharray: 3 3; fill: none; }
+    .lan { fill: none; stroke: #295176; stroke-width: 1.5; stroke-dasharray: 8 6; }
+    .wan { fill: none; stroke: #F28A45; stroke-width: 1.5; stroke-dasharray: 4 4; }
+    .ar { stroke: #16B8D8; stroke-width: 2; fill: none; marker-end: url(#a); }
+  </style>
+  <rect width="1000" height="560" fill="#081827"/>
+  <text x="30" y="36" class="t">Cluster architecture</text>
+  <text x="30" y="56" class="sub">Solid: implemented and measured. Dashed: planned or gated. All seven machines are peers on one private LAN. No internet uplink (operator check, not a network test).</text>
+  <rect x="360" y="80" width="280" height="56" rx="7" class="panel cy"/>
+  <text x="500" y="104" class="n" text-anchor="middle">Control machine (HP Envy)</text>
+  <text x="500" y="123" class="s" text-anchor="middle">orchestration, bookings, monitoring, evidence</text>
+  <line x1="500" y1="136" x2="500" y2="210" class="link"/>
+  <rect x="30" y="160" width="940" height="380" rx="12" class="lan"/>
+  <text x="48" y="184" class="k">PRIVATE LAN, 1 GBPS</text>
+  <rect x="730" y="170" width="222" height="28" rx="5" class="wan"/>
+  <text x="841" y="189" class="ko" text-anchor="middle">ROUTER WAN PORT: UNPLUGGED</text>
+  <line x1="60" y1="210" x2="940" y2="210" class="bus"/>
+  <line x1="115" y1="210" x2="115" y2="250" class="link d"/>
+  <rect x="52" y="250" width="126" height="108" rx="7" class="panel dash"/>
+  <text x="115" y="272" class="n" text-anchor="middle">G3-1</text>
+  <text x="115" y="290" class="s" text-anchor="middle">reserved node</text>
+  <text x="115" y="306" class="s" text-anchor="middle">32 GB DDR4-2400</text>
+  <text x="115" y="322" class="s" text-anchor="middle">large-model tests</text>
+  <text x="115" y="338" class="s" text-anchor="middle">(Experiment 3)</text>
+  <line x1="249" y1="210" x2="249" y2="250" class="link"/>
+  <rect x="186" y="250" width="126" height="108" rx="7" class="panel"/>
+  <text x="249" y="272" class="n" text-anchor="middle">G3-2</text>
+  <text x="249" y="290" class="s" text-anchor="middle">inference worker</text>
+  <text x="249" y="306" class="s" text-anchor="middle">16 GB DDR4-2400</text>
+  <text x="249" y="322" class="s" text-anchor="middle">Ollama</text>
+  <line x1="383" y1="210" x2="383" y2="250" class="link"/>
+  <rect x="320" y="250" width="126" height="108" rx="7" class="panel cy"/>
+  <text x="383" y="272" class="n" text-anchor="middle">G3-3</text>
+  <text x="383" y="290" class="s" text-anchor="middle">retrieval host</text>
+  <text x="383" y="306" class="s" text-anchor="middle">16 GB DDR4-2133</text>
+  <text x="383" y="322" class="s" text-anchor="middle">Open WebUI,</text>
+  <text x="383" y="338" class="s" text-anchor="middle">local embeddings</text>
+  <line x1="517" y1="210" x2="517" y2="250" class="link"/>
+  <rect x="454" y="250" width="126" height="108" rx="7" class="panel"/>
+  <text x="517" y="272" class="n" text-anchor="middle">G3-4</text>
+  <text x="517" y="290" class="s" text-anchor="middle">inference worker</text>
+  <text x="517" y="306" class="s" text-anchor="middle">32 GB DDR4-2400</text>
+  <text x="517" y="322" class="s" text-anchor="middle">Ollama</text>
+  <line x1="651" y1="210" x2="651" y2="250" class="link"/>
+  <rect x="588" y="250" width="126" height="108" rx="7" class="panel"/>
+  <text x="651" y="272" class="n" text-anchor="middle">G3-5</text>
+  <text x="651" y="290" class="s" text-anchor="middle">inference worker</text>
+  <text x="651" y="306" class="s" text-anchor="middle">16 GB DDR4-2400</text>
+  <text x="651" y="322" class="s" text-anchor="middle">Ollama</text>
+  <line x1="785" y1="210" x2="785" y2="250" class="link"/>
+  <rect x="722" y="250" width="126" height="108" rx="7" class="panel"/>
+  <text x="785" y="272" class="n" text-anchor="middle">G3-6</text>
+  <text x="785" y="290" class="s" text-anchor="middle">inference worker</text>
+  <text x="785" y="306" class="s" text-anchor="middle">24 GB DDR4-2400</text>
+  <text x="785" y="322" class="s" text-anchor="middle">Ollama,</text>
+  <text x="785" y="338" class="s" text-anchor="middle">evidence backups</text>
+  <line x1="919" y1="210" x2="919" y2="250" class="link"/>
+  <rect x="856" y="250" width="126" height="108" rx="7" class="panel ar"/>
+  <text x="919" y="272" class="n" text-anchor="middle">Dell OptiPlex</text>
+  <text x="919" y="290" class="s" text-anchor="middle">cold archive</text>
+  <text x="919" y="306" class="s" text-anchor="middle">16 GB DDR4-2400</text>
+  <text x="919" y="322" class="s" text-anchor="middle">in progress</text>
+  <text x="919" y="338" class="s" text-anchor="middle">no inference</text>
+  <path d="M 383 358 C 383 395, 470 395, 540 392 C 640 390, 700 390, 779 370" class="link q"/>
+  <text x="560" y="412" class="s" text-anchor="middle" style="fill:#2678DC">retrieval queries to the workers (condition C3)</text>
+  <text x="52" y="380" class="k">GATED: NEVER REBOOTED,</text>
+  <text x="52" y="396" class="k">EVERY CHANGE APPROVED</text>
+  <text x="48" y="470" class="s">Each worker serves one model at a time. A run books a node, loads a model, runs its cases, confirms the model is unloaded, releases the node.</text>
+  <text x="48" y="490" class="s">Verified model copies are distributed across the workers; the Dell is to hold the models that had no other durable copy (transfer in progress).</text>
+  <text x="48" y="510" class="s">The control machine is never a worker. G3-1 has special handling: it is never rebooted and every change needs approval.</text>
+</svg>

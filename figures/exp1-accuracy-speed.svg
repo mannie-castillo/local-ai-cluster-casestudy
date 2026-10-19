@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="530" viewBox="0 0 800 530" role="img" aria-labelledby="t d">
+  <title id="t">Experiment 1: correct answers of 40 per model and node, with the small-model-first cascade shown for comparison</title>
+  <desc id="d">The cascade that tries the 4B model first and escalates to the 14B and then the 20B model reached 34 of 40, more than any single model. Upper bound: escalation was decided by the grader. Single models: Gemma 3 12B on G3-6 32, Qwen3 4B on G3-5 31, Qwen3 4B on G3-2 31, Qwen3 14B on G3-4 29, Qwen3 14B on G3-6 29, gpt-oss 20B on G3-1 27, Hermes 3 8B on G3-4 26, Llama 3.1 8B on G3-5 17. Median generation speed per run is shown at right.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; fill: #F4F8FF; }
+    .t { font-size: 18px; font-weight: 700; }
+    .sub { font-size: 13px; fill: #C8DAED; }
+    .n { font-size: 14px; font-weight: 700; }
+    .s { font-size: 12.5px; fill: #C8DAED; }
+    .s1 { font-size: 12.5px; fill: #F4F8FF; }
+    .v { font-size: 14px; font-weight: 700; }
+    .big { font-size: 24px; font-weight: 700; }
+    .k { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #16B8D8; }
+    .ko { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #F28A45; }
+    .ax { font-size: 12px; fill: #C8DAED; }
+    .grid { stroke: #295176; stroke-width: 1; }
+    .base { stroke: #C8DAED; stroke-width: 1; }
+    .panel { fill: #102C49; stroke: #295176; stroke-width: 1.5; }
+    .panel.cy { stroke: #16B8D8; }
+    .panel.or { stroke: #F28A45; stroke-dasharray: 6 4; }
+    .panel.ar { stroke: #C8DAED; fill: #0C2038; }
+    .panel.dash { stroke: #16B8D8; stroke-dasharray: 6 4; }
+    .bus { stroke: #16B8D8; stroke-width: 2.5; }
+    .link { stroke: #16B8D8; stroke-width: 1.5; }
+    .link.d { stroke-dasharray: 6 4; }
+    .link.q { stroke: #2678DC; stroke-dasharray: 3 3; fill: none; }
+    .lan { fill: none; stroke: #295176; stroke-width: 1.5; stroke-dasharray: 8 6; }
+    .wan { fill: none; stroke: #F28A45; stroke-width: 1.5; stroke-dasharray: 4 4; }
+    .ar { stroke: #16B8D8; stroke-width: 2; fill: none; marker-end: url(#a); }
+  </style>
+  <rect width="800" height="530" fill="#081827"/>
+  <text x="24" y="32" class="t">Experiment 1: correct answers of 40, by model and by routing strategy</text>
+  <text x="24" y="52" class="sub">One model per node; some runs in parallel across nodes. Median generation speed at right. 35 W CPUs, no GPU.</text>
+  <line x1="200" x2="200" y1="70" y2="460" class="grid"/><text x="200" y="480" class="ax" text-anchor="middle">0</text>
+  <line x1="310" x2="310" y1="70" y2="460" class="grid"/><text x="310" y="480" class="ax" text-anchor="middle">10</text>
+  <line x1="420" x2="420" y1="70" y2="460" class="grid"/><text x="420" y="480" class="ax" text-anchor="middle">20</text>
+  <line x1="530" x2="530" y1="70" y2="460" class="grid"/><text x="530" y="480" class="ax" text-anchor="middle">30</text>
+  <line x1="640" x2="640" y1="70" y2="460" class="grid"/><text x="640" y="480" class="ax" text-anchor="middle">40</text>
+  <rect x="200" y="76" width="374" height="26" rx="3" fill="#16B8D8"/>
+  <text x="584" y="94" class="v">34</text>
+  <text x="188" y="89" class="s1" text-anchor="end" style="font-weight:700">Cascade</text>
+  <text x="188" y="103" class="s" text-anchor="end" style="font-size:11.5px">4B, then 14B, then 20B</text>
+  <text x="670" y="94" class="k">UPPER BOUND</text>
+  <line x1="200" x2="640" y1="112" y2="112" class="grid" stroke-dasharray="4 3"/>
+  <rect x="200" y="122" width="352" height="26" rx="3" fill="#2678DC"/>
+  <text x="562" y="140" class="v">32</text>
+  <text x="670" y="140" class="s">2.9 tok/s</text>
+  <text x="188" y="135" class="s1" text-anchor="end" style="font-weight:700">Gemma 3 12B</text>
+  <text x="188" y="149" class="s" text-anchor="end" style="font-size:11.5px">G3-6, 24 GB DDR4-2400</text>
+  <rect x="200" y="162" width="341" height="26" rx="3" fill="#2678DC"/>
+  <text x="551" y="180" class="v">31</text>
+  <text x="670" y="180" class="s">9.8 tok/s</text>
+  <text x="188" y="175" class="s1" text-anchor="end" style="font-weight:700">Qwen3 4B</text>
+  <text x="188" y="189" class="s" text-anchor="end" style="font-size:11.5px">G3-5, 16 GB DDR4-2400</text>
+  <rect x="200" y="202" width="341" height="26" rx="3" fill="#2678DC"/>
+  <text x="551" y="220" class="v">31</text>
+  <text x="670" y="220" class="s">9.6 tok/s</text>
+  <text x="188" y="215" class="s1" text-anchor="end" style="font-weight:700">Qwen3 4B</text>
+  <text x="188" y="229" class="s" text-anchor="end" style="font-size:11.5px">G3-2, 16 GB DDR4-2400</text>
+  <rect x="200" y="242" width="319" height="26" rx="3" fill="#2678DC"/>
+  <text x="529" y="260" class="v">29</text>
+  <text x="670" y="260" class="s">2.8 tok/s</text>
+  <text x="188" y="255" class="s1" text-anchor="end" style="font-weight:700">Qwen3 14B</text>
+  <text x="188" y="269" class="s" text-anchor="end" style="font-size:11.5px">G3-4, 32 GB DDR4-2400</text>
+  <rect x="200" y="282" width="319" height="26" rx="3" fill="#2678DC"/>
+  <text x="529" y="300" class="v">29</text>
+  <text x="670" y="300" class="s">2.2 tok/s</text>
+  <text x="188" y="295" class="s1" text-anchor="end" style="font-weight:700">Qwen3 14B</text>
+  <text x="188" y="309" class="s" text-anchor="end" style="font-size:11.5px">G3-6, 24 GB DDR4-2400</text>
+  <rect x="200" y="322" width="297" height="26" rx="3" fill="#2678DC"/>
+  <text x="507" y="340" class="v">27</text>
+  <text x="670" y="340" class="s">6.6 tok/s</text>
+  <text x="188" y="335" class="s1" text-anchor="end" style="font-weight:700">gpt-oss 20B</text>
+  <text x="188" y="349" class="s" text-anchor="end" style="font-size:11.5px">G3-1, 32 GB DDR4-2400</text>
+  <rect x="200" y="362" width="286" height="26" rx="3" fill="#2678DC"/>
+  <text x="496" y="380" class="v">26</text>
+  <text x="670" y="380" class="s">5.5 tok/s</text>
+  <text x="188" y="375" class="s1" text-anchor="end" style="font-weight:700">Hermes 3 8B</text>
+  <text x="188" y="389" class="s" text-anchor="end" style="font-size:11.5px">G3-4, 32 GB DDR4-2400</text>
+  <rect x="200" y="402" width="187" height="26" rx="3" fill="#2678DC"/>
+  <text x="397" y="420" class="v">17</text>
+  <text x="670" y="420" class="s">5.5 tok/s</text>
+  <text x="188" y="415" class="s1" text-anchor="end" style="font-weight:700">Llama 3.1 8B</text>
+  <text x="188" y="429" class="s" text-anchor="end" style="font-size:11.5px">G3-5, 16 GB DDR4-2400</text>
+  <text x="24" y="500" class="s">Cascade: the 4B model answers first; escalation decided by the grader (upper bound).</text>
+  <text x="24" y="516" class="s">Running the 14B model on every question was the slowest option and not the most accurate.</text>
+</svg>

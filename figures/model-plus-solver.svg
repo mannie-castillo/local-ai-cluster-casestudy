@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="270" viewBox="0 0 1000 270" role="img" aria-labelledby="t d">
+  <title id="t">Proposed model-plus-solver workflow for rule-governed tasks, not yet validated end to end</title>
+  <desc id="d">A natural-language request goes to a language model that extracts structured constraints. A deterministic solver computes a plan. An independent verifier checks the plan against the constraints. The model then explains the verified result. Extraction is scored on its own, because a correct solution to the wrong constraints is still wrong. Proposed from the Depth-1 finding; not tested end to end.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; fill: #F4F8FF; }
+    .t { font-size: 18px; font-weight: 700; }
+    .sub { font-size: 13px; fill: #C8DAED; }
+    .n { font-size: 14px; font-weight: 700; }
+    .s { font-size: 12.5px; fill: #C8DAED; }
+    .s1 { font-size: 12.5px; fill: #F4F8FF; }
+    .v { font-size: 14px; font-weight: 700; }
+    .big { font-size: 24px; font-weight: 700; }
+    .k { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #16B8D8; }
+    .ko { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #F28A45; }
+    .ax { font-size: 12px; fill: #C8DAED; }
+    .grid { stroke: #295176; stroke-width: 1; }
+    .base { stroke: #C8DAED; stroke-width: 1; }
+    .panel { fill: #102C49; stroke: #295176; stroke-width: 1.5; }
+    .panel.cy { stroke: #16B8D8; }
+    .panel.or { stroke: #F28A45; stroke-dasharray: 6 4; }
+    .panel.ar { stroke: #C8DAED; fill: #0C2038; }
+    .panel.dash { stroke: #16B8D8; stroke-dasharray: 6 4; }
+    .bus { stroke: #16B8D8; stroke-width: 2.5; }
+    .link { stroke: #16B8D8; stroke-width: 1.5; }
+    .link.d { stroke-dasharray: 6 4; }
+    .link.q { stroke: #2678DC; stroke-dasharray: 3 3; fill: none; }
+    .lan { fill: none; stroke: #295176; stroke-width: 1.5; stroke-dasharray: 8 6; }
+    .wan { fill: none; stroke: #F28A45; stroke-width: 1.5; stroke-dasharray: 4 4; }
+    .ar { stroke: #16B8D8; stroke-width: 2; fill: none; marker-end: url(#a); }
+  </style>
+  <rect width="1000" height="270" fill="#081827"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16B8D8"/></marker></defs>
+  <text x="24" y="32" class="t">Proposed workflow for exact planning and scheduling</text>
+  <rect x="24" y="44" width="548" height="24" rx="4" fill="none" stroke="#F28A45" stroke-width="1.2"/>
+  <text x="34" y="60" class="ko">PROPOSED ARCHITECTURE, NOT YET VALIDATED END TO END (EXPERIMENT 3)</text>
+  <rect x="24" y="100" width="150" height="72" rx="7" class="panel"/>
+  <text x="99" y="132" class="n" text-anchor="middle">Request</text>
+  <text x="99" y="152" class="s" text-anchor="middle">natural language</text>
+  <path d="M 174 136 L 205 136" class="ar"/>
+  <rect x="208" y="100" width="170" height="72" rx="7" class="panel cy"/>
+  <text x="293" y="119" class="k" text-anchor="middle">LANGUAGE MODEL</text>
+  <text x="293" y="140" class="n" text-anchor="middle">Extract constraints</text>
+  <text x="293" y="158" class="s" text-anchor="middle">into a structured form</text>
+  <path d="M 378 136 L 409 136" class="ar"/>
+  <rect x="412" y="100" width="160" height="72" rx="7" class="panel"/>
+  <text x="492" y="119" class="k" text-anchor="middle">DETERMINISTIC</text>
+  <text x="492" y="140" class="n" text-anchor="middle">Solve</text>
+  <text x="492" y="158" class="s" text-anchor="middle">compute a feasible plan</text>
+  <path d="M 572 136 L 603 136" class="ar"/>
+  <rect x="606" y="100" width="160" height="72" rx="7" class="panel"/>
+  <text x="686" y="119" class="k" text-anchor="middle">DETERMINISTIC</text>
+  <text x="686" y="140" class="n" text-anchor="middle">Verify</text>
+  <text x="686" y="158" class="s" text-anchor="middle">every constraint checked</text>
+  <path d="M 766 136 L 797 136" class="ar"/>
+  <rect x="800" y="100" width="176" height="72" rx="7" class="panel cy"/>
+  <text x="888" y="119" class="k" text-anchor="middle">LANGUAGE MODEL</text>
+  <text x="888" y="140" class="n" text-anchor="middle">Explain</text>
+  <text x="888" y="158" class="s" text-anchor="middle">without altering the result</text>
+  <path d="M 293 172 L 293 202" class="link d"/>
+  <rect x="176" y="202" width="234" height="44" rx="5" class="panel dash"/>
+  <text x="293" y="221" class="s1" text-anchor="middle" style="font-weight:700">Extraction scored on its own</text>
+  <text x="293" y="238" class="s" text-anchor="middle">omitted, invented or wrong constraints</text>
+  <text x="976" y="226" class="s" text-anchor="end">The solver guarantees the plan satisfies the constraints it was given, if it represents them faithfully.</text>
+  <text x="976" y="244" class="s" text-anchor="end">The remaining risk is extracting them wrong. That is where a larger model might help.</text>
+</svg>

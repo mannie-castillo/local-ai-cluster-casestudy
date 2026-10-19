@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="356" viewBox="0 0 760 356" role="img" aria-labelledby="t d">
+  <title id="t">Operational Depth-1: verified successes per task family, four models each</title>
+  <desc id="d">Planning: 0 of 4 models satisfied all 12 constraints on a schedule a checker had proved feasible. Diagnosis: 4 of 4 correctly revised when new evidence arrived. Recovery: 2 of 4 recovered a faulted workflow within three attempts. Total 6 of 12 verified in 20.27 minutes. One scenario per task family; exploratory.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; fill: #F4F8FF; }
+    .t { font-size: 18px; font-weight: 700; }
+    .sub { font-size: 13px; fill: #C8DAED; }
+    .n { font-size: 14px; font-weight: 700; }
+    .s { font-size: 12.5px; fill: #C8DAED; }
+    .s1 { font-size: 12.5px; fill: #F4F8FF; }
+    .v { font-size: 14px; font-weight: 700; }
+    .big { font-size: 24px; font-weight: 700; }
+    .k { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #16B8D8; }
+    .ko { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; fill: #F28A45; }
+    .ax { font-size: 12px; fill: #C8DAED; }
+    .grid { stroke: #295176; stroke-width: 1; }
+    .base { stroke: #C8DAED; stroke-width: 1; }
+    .panel { fill: #102C49; stroke: #295176; stroke-width: 1.5; }
+    .panel.cy { stroke: #16B8D8; }
+    .panel.or { stroke: #F28A45; stroke-dasharray: 6 4; }
+    .panel.ar { stroke: #C8DAED; fill: #0C2038; }
+    .panel.dash { stroke: #16B8D8; stroke-dasharray: 6 4; }
+    .bus { stroke: #16B8D8; stroke-width: 2.5; }
+    .link { stroke: #16B8D8; stroke-width: 1.5; }
+    .link.d { stroke-dasharray: 6 4; }
+    .link.q { stroke: #2678DC; stroke-dasharray: 3 3; fill: none; }
+    .lan { fill: none; stroke: #295176; stroke-width: 1.5; stroke-dasharray: 8 6; }
+    .wan { fill: none; stroke: #F28A45; stroke-width: 1.5; stroke-dasharray: 4 4; }
+    .ar { stroke: #16B8D8; stroke-width: 2; fill: none; marker-end: url(#a); }
+  </style>
+  <rect width="760" height="356" fill="#081827"/>
+  <text x="24" y="32" class="t">Operational Depth-1: models that completed each task</text>
+  <text x="24" y="52" class="sub">Four models, one scenario per task family, every success independently verified. 6 of 12 in 20.27 minutes.</text>
+  <line x1="70" x2="720" y1="240" y2="240" class="base"/><text x="60" y="244" class="ax" text-anchor="end">0</text>
+  <line x1="70" x2="720" y1="205" y2="205" class="grid"/><text x="60" y="209" class="ax" text-anchor="end">1</text>
+  <line x1="70" x2="720" y1="170" y2="170" class="grid"/><text x="60" y="174" class="ax" text-anchor="end">2</text>
+  <line x1="70" x2="720" y1="135" y2="135" class="grid"/><text x="60" y="139" class="ax" text-anchor="end">3</text>
+  <line x1="70" x2="720" y1="100" y2="100" class="grid"/><text x="60" y="104" class="ax" text-anchor="end">4</text>
+  <rect x="120" y="100" width="120" height="140" rx="5" fill="none" stroke="#F28A45" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="180" y="178" class="big" text-anchor="middle">0 of 4</text>
+  <text x="180" y="266" class="n" text-anchor="middle">Planning</text>
+  <text x="180" y="284" class="s" text-anchor="middle">12 interacting constraints</text>
+  <text x="180" y="300" class="s" text-anchor="middle">proved feasible by a checker</text>
+  <rect x="320" y="100" width="120" height="140" rx="5" fill="none" stroke="#F28A45" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="320" y="100" width="120" height="140" rx="5" fill="#2678DC"/>
+  <text x="380" y="179.0" class="big" text-anchor="middle">4 of 4</text>
+  <text x="380" y="266" class="n" text-anchor="middle">Diagnosis</text>
+  <text x="380" y="284" class="s" text-anchor="middle">conflicting evidence, then revise</text>
+  <text x="380" y="300" class="s" text-anchor="middle">all found the real cause</text>
+  <rect x="520" y="100" width="120" height="140" rx="5" fill="none" stroke="#F28A45" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <rect x="520" y="170" width="120" height="70" rx="5" fill="#2678DC"/>
+  <text x="580" y="214.0" class="big" text-anchor="middle">2 of 4</text>
+  <text x="580" y="266" class="n" text-anchor="middle">Recovery</text>
+  <text x="580" y="284" class="s" text-anchor="middle">one workflow, three faults</text>
+  <text x="580" y="300" class="s" text-anchor="middle">up to three attempts</text>
+  <rect x="24" y="312" width="12" height="12" rx="3" fill="#2678DC"/><text x="42" y="323" class="s">verified success</text>
+  <rect x="160" y="312" width="12" height="12" rx="3" fill="none" stroke="#F28A45" stroke-dasharray="3 2"/><text x="178" y="323" class="s">not achieved</text>
+  <text x="24" y="344" class="ko">EXPLORATORY: ONE SCENARIO PER TASK FAMILY. A DESIGN FINDING, NOT A RANKING.</text>
+</svg>
